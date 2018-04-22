@@ -7,18 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
-import java.text.DateFormat;
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.TimeZone;
 
 /**
@@ -35,21 +32,26 @@ public class MainActivity extends AppCompatActivity {
 
     EditText customerPhoneEditText;
     String customerPhone ;
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
 
-//    Button showOrderBtn = findViewById(R.id.show_summary_button);
-//    Button confirmOrderBtn = new Button(this);
-//    Button resetOrderBtn = new Button(this);
+    LinearLayout mOrderLayout;
+    ImageView mClosedImageView;
 
-    //private static final String KEY_TEXT_VALUE2 = "textValue2";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
-//        int currentHour = cal.get(Calendar.HOUR);
 
-       /* if (currentHour >= 8 && currentHour <= 22) {*/
-            setContentView(R.layout.activity_main);
-            mTextView = (TextView) findViewById(R.id.quantity_text_view);
+        setContentView(R.layout.activity_main);
+        mOrderLayout = findViewById(R.id.order_layout);
+        mClosedImageView = findViewById(R.id.image_closed);
+
+        int currentHour = cal.get(Calendar.HOUR_OF_DAY);
+        Log.v("MainActivity", "Current Hour: " + currentHour);
+        if (currentHour >= 8 && currentHour <= 22) {
+            Log.v("MainActivity", "Hi");
+            showOpened();
+        }
+        mTextView = findViewById(R.id.quantity_text_view);
             //nTextView = findViewById(R.id.order_summary_text_view);
             if (savedInstanceState != null) {
                 CharSequence savedText1 = savedInstanceState.getCharSequence(KEY_TEXT_VALUE1);
@@ -58,8 +60,15 @@ public class MainActivity extends AppCompatActivity {
                 //nTextView.setText(savedText2);
             }
         }
-//    }
-        @Override protected void onSaveInstanceState (Bundle outState){
+
+
+    public void showOpened() {
+        mOrderLayout.setVisibility(View.VISIBLE);
+        mClosedImageView.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
             super.onSaveInstanceState(outState);
             outState.putCharSequence(KEY_TEXT_VALUE1, mTextView.getText());
             //outState.putCharSequence(KEY_TEXT_VALUE2, nTextView.getText());
@@ -140,8 +149,8 @@ public class MainActivity extends AppCompatActivity {
          * @param quantityDisp incremented or decremented quantity
          */
         private void displayQuantity ( int quantityDisp){
-            TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-            quantityTextView.setText("" + quantityDisp);
+            TextView quantityTextView = findViewById(R.id.quantity_text_view);
+            quantityTextView.setText(String.valueOf(quantityDisp));
         }
 
 
@@ -154,10 +163,10 @@ public class MainActivity extends AppCompatActivity {
          */
         private int calculatePrice ( int pricePerCup){
             int totalPrice = quantity * pricePerCup;
-            if (topping1() == true) {
+            if (topping1()) {
                 totalPrice += quantity * 2;
             }
-            if (topping2() == true) {
+            if (topping2()) {
                 totalPrice += quantity * 3;
             }
             return totalPrice;
@@ -183,8 +192,7 @@ public class MainActivity extends AppCompatActivity {
             }
             String priceInRs = (NumberFormat.getCurrencyInstance().format(price));
             String priceMessage = getString(R.string.price_disp) + " : " + priceInRs;
-            String orderSummary = getString(R.string.name_disp) + " : " + name + "\n" + getString(R.string.phone_disp) + " : " + phone + "\n " + getString(R.string.quantity_disp) + ": " + quantity + "\n" + getString(R.string.whipped_cream_disp) + " : " + topping1 + "\n" + getString(R.string.chocolate_disp) + " : " + topping2 + "\n" + priceMessage + "\n" + getString(R.string.thank_you_disp) + "!";
-            return orderSummary;
+            return getString(R.string.name_disp) + " : " + name + "\n" + getString(R.string.phone_disp) + " : " + phone + "\n " + getString(R.string.quantity_disp) + ": " + quantity + "\n" + getString(R.string.whipped_cream_disp) + " : " + topping1 + "\n" + getString(R.string.chocolate_disp) + " : " + topping2 + "\n" + priceMessage + "\n" + getString(R.string.thank_you_disp) + "!";
         }
 
     }

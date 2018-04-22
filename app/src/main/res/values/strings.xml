@@ -6,7 +6,7 @@
     <string name="toppings_disp">toppings</string>
     <string name="topping1">Whipped Cream</string>
     <string name="topping2">Chocolate</string>
-    <string name="quantity_disp">quantity</string>
+    <string name="quantity_disp">Quantity</string>
     <string name="minus">-</string>
     <string name="one">1</string>
     <string name="plus">+</string>
@@ -26,4 +26,5 @@
     <string name="whipped_cream_disp">Add whipped cream</string>
     <string name="chocolate_disp">Add chocolate</string>
     <string name="thank_you_disp">Thank you!</string>
+    <string name="closed">Closed</string>
 </resources>
