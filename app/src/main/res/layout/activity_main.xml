@@ -100,5 +100,5 @@
             android:layout_height="wrap_content"
             android:onClick="submitOrder"
             android:text="@string/order" />
-</LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
