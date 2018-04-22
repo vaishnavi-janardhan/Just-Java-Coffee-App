@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Just Java</string>
+    <string name="name_suggest">Your name here</string>
+    <string name="phone_suggest">Your phone number here</string>
+    <string name="toppings_disp">toppings</string>
+    <string name="topping1">Whipped Cream</string>
+    <string name="topping2">Chocolate</string>
+    <string name="quantity_disp">quantity</string>
+    <string name="minus">-</string>
+    <string name="one">1</string>
+    <string name="plus">+</string>
+    <string name="order">order</string>
+    <string name="error_100">Sorry! We can\'t handle such huge orders.</string>
+    <string name="error_0">You have to order atleast one cup of coffee!</string>
+    <string name="whipped_cream_log">Has whipped cream</string>
+    <string name="chocolate_log">Has chocolate</string>
+    <string name="name_empty_error">Name field can\'t be empty</string>
+    <string name="phone_empty_error">Phone number field can\'t be empty</string>
+    <string name="email_subject">Coffee order for</string>
+    <string name="add_yes">Yes</string>
+    <string name="add_no">No</string>
+    <string name="price_disp">Price</string>
+    <string name="name_disp">Name</string>
+    <string name="phone_disp">Phone number</string>
+    <string name="whipped_cream_disp">Add whipped cream</string>
+    <string name="chocolate_disp">Add chocolate</string>
+    <string name="thank_you_disp">Thank you!</string>
+</resources>
