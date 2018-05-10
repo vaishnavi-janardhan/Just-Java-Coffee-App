@@ -7,4 +7,8 @@
     <dimen name="text_twenty">20sp</dimen>
     <dimen name="fortyeight">48dp</dimen>
     <dimen name="sixtyfour">64dp</dimen>
+    <dimen name="size_two_hundred">200dp</dimen>
+    <dimen name="size_four_hundred">400dp</dimen>
+    <dimen name="size_hundred">100dp</dimen>
+    <dimen name="size_four">4dp</dimen>
 </resources>

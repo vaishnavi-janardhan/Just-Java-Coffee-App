@@ -1,104 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/image_closed"
+    <RelativeLayout
+        android:id="@+id/closed_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/closed"
-        tools:contentDescription="@string/closed" />
+        android:background="@color/background_black"
+        android:gravity="center">
 
-    <LinearLayout
-        android:id="@+id/order_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <EditText
-            android:id="@+id/name_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/name_suggest"
-            android:inputType="text" />
-
-        <EditText
-            android:id="@+id/phone_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/phone_suggest"
-            android:inputType="phone" />
+        <ImageView
+            android:id="@+id/image_closed"
+            android:layout_width="@dimen/size_two_hundred"
+            android:layout_height="@dimen/size_two_hundred"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/sixteen"
+            android:contentDescription="@string/closed"
+            android:src="@drawable/donut_logo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/toppings_disp"
-            android:textAllCaps="true" />
+            android:layout_below="@id/image_closed"
+            android:text="@string/closed_disp"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Display2"
+            android:textColor="@color/text_white"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    </RelativeLayout>
 
-            <CheckBox
-                android:id="@+id/whipped_cream_check_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/whipped_cream_disp" />
-        </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/open_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_white"
+        android:gravity="center"
+        android:visibility="gone">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/welcome_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size_four_hundred"
+            android:src="@drawable/background" />
 
-            <CheckBox
-                android:id="@+id/chocolate_check_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/chocolate_disp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="decrement"
-                android:text="@string/minus" />
-
-            <TextView
-                android:id="@+id/quantity_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/one" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="increment"
-                android:text="@string/plus" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/order_button"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="submitOrder"
-            android:text="@string/order" />
-    </LinearLayout>
+            android:layout_centerHorizontal="true"
+            android:text="@string/welcome_disp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:fontFamily="casual" />
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome_bg"
+            android:layout_centerHorizontal="true"
+            android:text="@string/open_disp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:fontFamily="casual" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/sixteen"
+            android:backgroundTint="@color/colorAccent"
+            android:onClick="openOrderActivity"
+            android:text="@string/continue_disp"
+            android:textColor="@color/text_white" />
+
+    </RelativeLayout>
+
 </RelativeLayout>
