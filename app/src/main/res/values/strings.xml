@@ -26,5 +26,25 @@
     <string name="whipped_cream_disp">Add whipped cream</string>
     <string name="chocolate_disp">Add chocolate</string>
     <string name="thank_you_disp">Thank you!</string>
-    <string name="closed">Closed</string>
+    <string name="closed">Sorry, we are closed.</string>
+    <string name="intro">Hello \n How are you? \n Where are you?</string>
+    <string name="glaze_disp">Add sugar glaze</string>
+    <string name="frosted_disp">Add chocolate frost</string>
+    <string name="zero">0</string>
+    <string name="rs">\u20B9</string>
+    <string name="closed_disp">Breathe in&#8230; Breathe out Sorry, we are closed!</string>
+    <string name="welcome_disp">Welcome to DONUT CAFE !</string>
+    <string name="open_disp">Now OPEN :)</string>
+    <string name="continue_disp">continue</string>
+    <string name="coffee">coffee</string>
+    <string name="donuts">donuts</string>
+    <string name="price_coffee">(₹ 15 per cup)</string>
+    <string name="price_donut">(₹ 50 per donut)</string>
+    <string name="price_whipped_cream">Add whipped cream (₹ 5)</string>
+    <string name="price_chocolate">Add chocolate (₹ 8)</string>
+    <string name="price_glaze">Add sugar glaze (₹ 10)</string>
+    <string name="price_frost">Add chocolate frost (₹ 15)</string>
+    <string name="error_negative_coffee">Oops! No negative cups of coffee!</string>
+    <string name="erroe_negative_donut">You must be kidding!</string>
+    <string name="error_no_order">Oh No! You have to order something</string>
 </resources>
